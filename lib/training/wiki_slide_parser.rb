@@ -62,11 +62,11 @@ class WikiSlideParser
   end
 
   def remove_translation_markers
-    # Remove Translate comment markers like <!--T:123-->
-    @wikitext.gsub!(/<!--\s*T:\d+\s*-->\s*\n?/, '')
-
-    # Remove any remaining HTML comments introduced by Translate
-    @wikitext.gsub!(/<!--.*?-->/m, '')
+    # Remove both marker and any trailing whitespace after it,
+    # which may interfere with correct markdown conversion.
+    # Matches any amount of horizontal whitespace (\h) but at most
+    # one newline, to prevent concatenating the title with the contents.
+    @wikitext.gsub!(/<!--.+?-->\h*\n??/, '')
   end
 
   def remove_translate_tags
