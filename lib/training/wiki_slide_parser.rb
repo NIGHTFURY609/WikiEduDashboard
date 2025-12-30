@@ -62,20 +62,24 @@ class WikiSlideParser
   end
 
   def remove_translation_markers
-    # Remove both marker and any trailing whitespace after it,
-    # which may interfere with correct markdown conversion.
-    # Matches any amount of horizontal whitespace (\h) but at most
-    # one newline, to prevent concatenating the title with the contents.
-    @wikitext.gsub!(/<!--.+?-->\h*\n??/, '')
+    # Remove Translate comment markers like <!--T:123-->
+    @wikitext.gsub!(/<!--\s*T:\d+\s*-->\s*\n?/, '')
+
+    # Remove any remaining HTML comments introduced by Translate
+    @wikitext.gsub!(/<!--.*?-->/m, '')
   end
 
   def remove_translate_tags
-    # Remove both the tags and any excess whitespace within them,
-    # which may interfere with correct markdown conversion.
-    @wikitext.gsub!(/<translate>\s*/, '')
-    @wikitext.gsub!(%r{\s*</translate>}, '')
-    @wikitext.gsub!(/<tvar.*?>/, '')
-    @wikitext.gsub!(%r{</>}, '')
+    # Remove translate wrapper tags
+    @wikitext.gsub!(/<translate>\s*/m, '')
+    @wikitext.gsub!(/\s*<\/translate>/m, '')
+
+    # Remove tvar tags
+    @wikitext.gsub!(/<tvar[^>]*>/m, '')
+    @wikitext.gsub!(/<\/>/m, '')
+
+    # Remove orphaned closing braces left behind by translation templates
+    @wikitext.gsub!(/^\s*}}+\s*$/, '')
   end
 
   def remove_span_tags
