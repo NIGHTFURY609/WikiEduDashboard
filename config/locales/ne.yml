@@ -107,6 +107,7 @@ ne:
     no_data: कुनै डेटा फेला परेन।
     ai_stats:
       timestamp: समयछाप
+      last_week: पछिल्लो हप्ता
   activity:
     all: क्रियाकलाप
     edited_by: सम्पादनकर्ता
@@ -130,6 +131,9 @@ ne:
       tracked: ट्रयाक गरिएको
       untracked: ट्रयाक नगरिएको
       tracked_and_untracked: ट्रयाक गरिएको र ट्र्याक नगरिएको
+    pageviews_label: 'पूर्वालोकनहरू:'
+    cumulative: सञ्चित
+    daily_avg: दैनिक औसत
     hide: लुकाउनुहोस्
     history: (इतिहास)
     label: लेखहरू
@@ -177,7 +181,7 @@ ne:
     title_too_large: शीर्षक २५५ वर्ण भन्दा लामो हुन सक्दैन
     assignees: निर्दिष्ट गरिएका(हरू)
     assign_other: लेख निर्दिष्ट गर्नुहोस्
-    add_available: एक उपलब्ध लेख थप्नुहोस्
+    add_available: उपलब्ध लेखहरू थप्नुहोस्
     add_available_placeholder: हरेक हरफमा एक शीर्षक या युआरएल थप्नुहोस्
     add_available_submit: लेखहरू थप्नुहोस्
     assign_self: आफूलाई एक लेख असाइन गर्नुहोस्
@@ -296,7 +300,7 @@ ne:
       course_school: पाठ्यक्रम विद्यालय
       course_subject: पाठ्यक्रम विषय
       course_term: पाठ्यक्रम सत्र
-      course_term_placeholder: सत्र
+      course_term_placeholder: सत्र (वर्ष सहित)
       course_title: पाठ्यक्रमको नाम
       create_button: मेरो पाठ्यक्रम निर्माण गर्ने!
       create_label: नयाँ पाठ्यक्रम सिर्जना गर्नुहोस्
@@ -335,7 +339,7 @@ ne:
     end: अन्तिम
     ended: यो पाठ्यक्रम समाप्त भयो।
     enroll: समावेस गर्नुहोस्
-    enrollment: समावेशपना
+    enrollment: विद्यार्थीहरू थप्नुहोस्/हटाउनुहोस्
     courses_enrolled: समावेश भएका पाठ्यक्रमहरू
     error:
       exists: यस पाठ्यक्रम पहिले देखि नै रहेको छ! कृपया फरक शीर्षक, विद्यालय या सत्र
@@ -416,7 +420,7 @@ ne:
     volunteer:
       one: स्वयंसेवक
       other: स्वयंसेवकहरू
-    wiki_staff: Wiki Ed कर्मचारी
+    wiki_staff: विकि शिक्षा कर्मचारी
     yourcourses: तपाईंको पाठ्यक्रमहरू
     survey:
       link: सर्वेक्षण गर्नुहोस्
@@ -458,7 +462,7 @@ ne:
     delete_course: कार्यक्रम मेट्नुहोस्
     edit_course_dates: आयोजना मितिहरू सम्पादन गर्नुहोस्
     enroll: सम्पादक थप्नुहोस्
-    enrollment: सहभागिता
+    enrollment: सम्पादकहरू थप्नुहोस्/हटाउनुहोस्
     explore: कार्यक्रम खोज्नुहोस्
     courses_enrolled: सहभागी कार्यक्रमहरू
     expected_students: अपेक्षित सम्पादकहरू

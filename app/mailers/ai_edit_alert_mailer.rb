@@ -6,10 +6,19 @@ class AiEditAlertMailer < ApplicationMailer
     email(alert).deliver_now
   end
 
-  def email(alert)
+  def email(alert) # rubocop:disable Metrics/MethodLength
     @alert = alert
     @course = @alert.course
     return unless @course
+
+    @intro_variant = case @alert.page_type
+                     when :choose_an_article, :evaluate_an_article, :outline
+                       :exercise
+                     when :sandbox
+                       :sandbox
+                     else
+                       :default
+                     end
 
     to_email = @alert.content_experts.to_a
     to_email += [@alert.user]
